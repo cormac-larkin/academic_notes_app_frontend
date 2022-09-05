@@ -11,6 +11,7 @@ const LoginPage = (props) => {
         const options = {
             method: 'POST',
             headers: new Headers({ 'content-type': 'application/json' }),
+            credentials: "include",
             body: JSON.stringify({
                 email: data.get('email'),
                 password: data.get('password'),
@@ -31,7 +32,7 @@ const LoginPage = (props) => {
                 <br />
                 <form className={classes.form} onSubmit={handleSubmit}>
                     <label className={classes.inputLabel} htmlFor="email-address">Email Address</label>
-                    <input className={classes.input} type='text' name="email" id="email-address" required />
+                    <input className={classes.input} name="email" id="email-address" type='email' pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required />
                     <br />
                     <label className={classes.inputLabel} htmlFor="password">Password</label>
                     <input className={classes.input} type='password' name="password" id="password" minLength='8' required />
