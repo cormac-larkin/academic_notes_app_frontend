@@ -31,7 +31,7 @@ const SignUpPage = (props) => {
             })
         };
 
-        const response = await fetch('http://localhost:4000/users/register', options);
+        const response = await fetch('http://localhost:4000/auth/register', options);
         console.log(response);
 
         if (response.status === 200) {

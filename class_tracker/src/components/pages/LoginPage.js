@@ -1,8 +1,10 @@
 import classes from './LoginPage.module.css';
 import Card from '../layout/Card';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const LoginPage = (props) => {
+
+    const navigate = useNavigate();
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -18,9 +20,12 @@ const LoginPage = (props) => {
             })
         };
 
-        const response = await fetch('http://localhost:4000/users/login', options);
+        const response = await fetch('http://localhost:4000/auth/login', options);
         console.log(response);
 
+        if (response.status === 200) {
+            navigate('/home');
+        }
 
     };
 
