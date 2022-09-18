@@ -1,5 +1,5 @@
 import classes from './LoginPage.module.css';
-import Card from '../layout/Card';
+import Card from '../UI/Card';
 import { Link, useNavigate } from 'react-router-dom';
 
 const LoginPage = (props) => {

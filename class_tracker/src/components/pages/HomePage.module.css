@@ -1,0 +1,103 @@
+.pageWrapper {
+  min-height: 100vh;
+}
+
+.main {
+  background-color: rgb(242, 242, 242);
+  min-height: calc(100vh - 80px);
+  width: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-areas: "content";
+}
+
+.sideBar {
+  grid-area: sidebar;
+  display: none;
+  background-color: rgba(32, 38, 61, 0.94);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.sideBarList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  list-style-type: none;
+  padding: 0%;
+}
+
+.sideBarItem {
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  height: 35px;
+  width: calc(100% - 15px);
+  color: rgb(176, 191, 251);
+  transition: 0.1s;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-area: content;
+  padding-left: 5px;
+}
+
+.classContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90%;
+  border-radius: 10px;
+  margin: 3px;
+  padding-left: 2%;
+  padding-right: 2%;
+  background-color: white;
+  transition: 0.1s;
+}
+
+.classTitle {
+    max-width: 30%;
+}
+
+.linkContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+  padding-left: 5px;
+  align-items: center;
+}
+
+.noteLink {
+  cursor: pointer;
+  color: gray;
+}
+
+.noteLink:visited {
+  color: gray;
+}
+
+/* Media Query for larger screens */
+
+@media screen and (min-width: 719px) {
+  .main {
+    grid-template-columns: 15% auto;
+    grid-template-areas: "sidebar content";
+  }
+
+  .sideBar {
+    display: flex;
+  }
+
+  .sideBarItem:hover {
+    cursor: pointer;
+    background-color: rgb(0, 0, 0);
+  }
+
+  .classContainer:hover {
+    background-color: rgb(211, 211, 211);
+  }
+}

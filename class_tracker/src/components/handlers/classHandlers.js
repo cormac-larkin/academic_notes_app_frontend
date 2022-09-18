@@ -7,9 +7,12 @@ const getClasses = async () => {
         credentials: "include"
     };
 
+    // Send request, check for error response
     const response = await fetch('http://localhost:4000/classes', options);
-    const allClasses = await response.json();
+    if (response.status !== 200) { return response; }
 
+    // If no error, return JSON content of response
+    const allClasses = await response.json();
     return allClasses;
 };
 
@@ -26,10 +29,13 @@ const addClass = async (className) => {
         })
     };
 
+    // Send request, check for error response
     const response = await fetch('http://localhost:4000/classes/add', options);
-    const allClasses = await response.json();
+    if (response.status !== 200) { return response; }
 
-    return allClasses;
+    // If no error, return JSON content of response
+    const addedClass = await response.json();
+    return addedClass;
 };
 
 

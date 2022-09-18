@@ -1,0 +1,30 @@
+.navBar {
+  display: flex;
+  align-items: center;
+  background-color: rgba(61, 118, 252, 0.956);
+  color: rgb(255, 255, 255);
+}
+
+.homeButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding-left: 10px;
+}
+
+.navList {
+  display: flex;
+  justify-content: flex-end;
+  list-style-type: none;
+  height: 100%;
+  width: 100%;
+}
+
+.navItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
